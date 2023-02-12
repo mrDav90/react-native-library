@@ -1,42 +1,42 @@
-import { Alert } from "react-native"
 import Portal from "../portal"
+import { ToastProps } from "./interface"
 import Toast from "./Toast"
 
-
-const show = ( content : string , type ?: string ) => {
-    const key = <Toast 
-                    content={content}
-                    type={type}
+const show = ( toastProps : ToastProps  ) => {
+    const toast = <Toast 
+                    content={toastProps.content}
+                    type={ toastProps.type}
                 />
-            
-    return Portal.add(key);
+    return Portal.add(toast);
 }
 
-const showToastType = () => {}
-
 export default {
-    info : ( content : string , duration? : number ) => {
-        let key = show(content , "info")
+    info : ( object : ToastProps ) => {
+        object.type="info"
+        let key = show(object)
         setTimeout(() => {
             Portal.remove(key)
-        },  (duration ? duration * 1000 : 2000) );
+        },  (object.duration ? object.duration * 1000 : 2000) );
     } ,
-    success : ( content : string , duration? : number ) => {
-        let key = show(content , "success")
+    success : ( object : ToastProps ) => {
+        object.type="success"
+        let key = show(object)
         setTimeout(() => {
             Portal.remove(key)
-        },  (duration ? duration * 1000 : 2000) );
+        },  (object.duration ? object.duration * 1000 : 2000) );
     } ,
-    error : ( content : string , duration? : number ) => {
-        let key = show(content , "error")
+    error : ( object : ToastProps ) => {
+        object.type="error"
+        let key = show(object)
         setTimeout(() => {
             Portal.remove(key)
-        },  (duration ? duration * 1000 : 2000) );
+        },  (object.duration ? object.duration * 1000 : 2000) );
     } ,
-    warning : ( content : string , duration? : number ) => {
-        let key = show(content , "warning")
+    warning : ( object : ToastProps ) => {
+        object.type="warning"
+        let key = show(object)
         setTimeout(() => {
             Portal.remove(key)
-        },  (duration ? duration * 1000 : 2000) );
+        },  (object.duration ? object.duration * 1000 : 2000) );
     } ,
 }

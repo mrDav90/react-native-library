@@ -1,5 +1,5 @@
 import { Toast } from "./utils"
 
 export const message = () => {
-    Toast.info("Ca marche !")
+    Toast.info({content:"This is a info toast" , duration : 3})
 }

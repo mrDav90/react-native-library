@@ -1,7 +1,7 @@
 export interface ToastProps {
     content : string ,
     duration ?: number ,
-    type ?: string 
+    type ? : 'success' | 'error' | 'info' | 'warning' ,
 }
 
 

@@ -29,11 +29,21 @@ const Toast = ({content , type} :  ToastProps)  => {
                 width : 2 ,
                 height : 2
             },
-            backgroundColor : "#fff"
+           backgroundColor : type === "info" && colors.infoColor || type === "success" && colors.successColor || type === "error" && colors.errorColor || type === "warning" && colors.warningColor 
         } ,
         content : {
-            color : "#000",
-            fontSize : 14
+            color : "#fff",
+            fontSize : 15 ,
+        } ,
+        textContent : {
+            width : "auto" ,
+            maxWidth : "90%",
+        } ,
+        iconContent : {
+            width: "10%" ,
+            display : "flex",
+            justifyContent:"center",
+            alignItems:"center"
         }
     })
     
@@ -62,23 +72,20 @@ const Toast = ({content , type} :  ToastProps)  => {
             }
         >
     
-                    <Ionicons  
-                        name={ 
-                            (type==="success" && "checkmark-circle" as any ) ||
-                            (type==="error" && "close-circle" as any) ||
-                            (type==="warning" && "alert-circle" as any) ||
-                            (type==="info" && "information-circle" as any) 
-                        }
-                        size={24}
-                        color={
-                          type === "info" && colors.infoColor || 
-                          type === "success" && colors.successColor || 
-                          type === "error" && colors.errorColor || 
-                          type === "warning" && colors.warningColor 
-                        }
-                    />
-                    <View style={{marginLeft : 5}} >
-                            <Text style={styles.content} > {content} </Text>
+                    <View style={styles.iconContent} >
+                        <Ionicons  
+                            name={ 
+                                (type==="success" && "checkmark-circle" as any ) ||
+                                (type==="error" && "close-circle" as any) ||
+                                (type==="warning" && "alert-circle" as any) ||
+                                (type==="info" && "information-circle" as any) 
+                            }
+                            size={24}
+                            color={"#fff"}
+                        />
+                    </View>
+                    <View style={styles.textContent} >
+                            <Text style={styles.content} > {content.trim()} </Text>
                     </View>
 
         </Animated.View>

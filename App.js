@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { StyleSheet, Text, View , Button } from 'react-native';
 import { message } from './src/func';
-import { Toast } from './src/utils';
+import { BottomSheetComponent, Toast } from './src/utils';
 import Portal from './src/utils/portal';
 
 export default function App() {
@@ -18,6 +18,12 @@ export default function App() {
     <Portal.Host>
       <View style={styles.container}>
         <Button onPress={success} title="success"  /> 
+
+        <BottomSheetComponent 
+          content={<Text>Hello les amis</Text>}
+          points={['25%','50%','75%']} 
+        />
+        
       </View>
     </Portal.Host>
   );

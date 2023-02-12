@@ -29,10 +29,10 @@ const Toast = ({content , type} :  ToastProps)  => {
                 width : 2 ,
                 height : 2
             },
-           backgroundColor : type === "info" && colors.infoColor || type === "success" && colors.successColor || type === "error" && colors.errorColor || type === "warning" && colors.warningColor 
+           backgroundColor : "#fff"
         } ,
         content : {
-            color : "#fff",
+            color : "#000",
             fontSize : 15 ,
         } ,
         textContent : {
@@ -81,7 +81,11 @@ const Toast = ({content , type} :  ToastProps)  => {
                                 (type==="info" && "information-circle" as any) 
                             }
                             size={24}
-                            color={"#fff"}
+                            color={ type === "info" && colors.infoColor || 
+                                    type === "success" && colors.successColor || 
+                                    type === "error" && colors.errorColor || 
+                                    type === "warning" && colors.warningColor 
+                                }
                         />
                     </View>
                     <View style={styles.textContent} >

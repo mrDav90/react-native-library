@@ -1,5 +1,6 @@
 export const colors = {
-    appColor : "#3498db",
+    //appColor : "#3498db",
+    appColor : "#0984e3" ,
     inputBorderColor : "#bdc3c7" ,
     dividerColor : "rgba(160, 170, 166, 0.16)" ,
     successColor : "#44bd32" ,

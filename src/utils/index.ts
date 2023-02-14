@@ -1,3 +1,6 @@
 export { default as Toast } from "./toast/index"
 export { default as Portal } from "./portal/index"
 export { default as BottomSheetComponent } from "./bottom-sheet/index"
+export { default as UtilsProvider } from "./provider/index"
+export { default as AlertCust } from "./alert/index"
+export { default as Notification } from "./notification/index"

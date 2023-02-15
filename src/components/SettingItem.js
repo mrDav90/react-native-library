@@ -13,9 +13,9 @@ const SettingItem = ({title , onPress , icon}) => {
             justifyContent:'space-between',
             alignItems:'center',
             flexDirection:'row',
-            paddingVertical : 15
-            // borderBottomColor : colors.dividerColor ,
-            // borderBottomWidth : 1
+            padding : 15 ,            
+            borderBottomColor : "rgba(160, 170, 166, 0.16)" ,
+            borderBottomWidth : 1
         } ,
         container : {
             display:'flex',
@@ -31,7 +31,7 @@ const SettingItem = ({title , onPress , icon}) => {
             {
                 icon && 
                 icon
-            }
+            } 
             <TextCust content={title} />
             </View>
             <Ionicons  name='chevron-forward' size={24} color={currentMode.principalColor} />

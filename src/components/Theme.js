@@ -17,7 +17,7 @@ const Theme = () => {
     const dispatch = useDispatch();
     const styles = StyleSheet.create({
         wrapper : {
-            backgroundColor : currentMode.principalBgColor
+            backgroundColor : "transparent"
         } ,
         container : {
             width : "100%" ,
@@ -54,8 +54,7 @@ const Theme = () => {
                     <Ionicons name='moon-outline' size={24} color={currentMode.principalColor} />  
                     <TextCust content={"Mode Sombre"} />       
                 </View>
-                <View style={{display:'flex',alignItems:'center',flexDirection:'row'}}>        
-                    <TextCust content={isChecked ? "On" : "Off"} />       
+                <View>             
                     <Switch  onValueChange={()=>{dispatch(setTheme(handleTheme()))}} value={isChecked} style={{alignSelf:"flex-end"}} trackColor={{ true : colors.appColor}} />
                 </View>
             </View>

@@ -27,20 +27,15 @@ const TabBar = ({ navigation }) => {
         } ,
         tabBarShowLabel : true ,
         tabBarStyle : {
-        backgroundColor :  currentMode.principalBgColor
+        backgroundColor :  currentMode.principalBgColor ,
         },
         tabBarActiveTintColor : currentMode.principalColor ,
-
-    
         headerRight:()=>{
         return ( 
-            <View style={{display:'flex',flexDirection:"row",alignItems:'center',width: 80 ,justifyContent: "space-between" ,marginRight:15}} >
+            <View style={{display:'flex',flexDirection:"row",alignItems:'center',width: "auto" ,justifyContent: "space-between" ,marginRight:15}} >
                 <Pressable>
                     <Ionicons name='search-outline' size={24} color={currentMode.principalColor}  />
                 </Pressable>
-                {/* <Pressable onPress={()=>{navigation.navigate("Signin")}} >
-                    <Ionicons name='log-in-outline' size={24} color={currentMode.principalColor}  />
-                </Pressable> */}
             </View>
         )
         }
@@ -55,7 +50,7 @@ const TabBar = ({ navigation }) => {
     }
 
     const customizeLabel = (focused , labelText) => {
-        return <TextCust content={labelText} /> /**focused?colors.appColor : currentMode.principalColor */  
+        return <TextCust content={labelText} color={focused?colors.appColor : currentMode.principalColor} /> /**focused?colors.appColor : currentMode.principalColor */  
     }
 
     const handleNavigation = () => {

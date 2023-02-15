@@ -8,7 +8,7 @@ const TextCust = (textCustProps  : TextCustProps) : any => {
 
     const styles = StyleSheet.create({
         text : {
-            color : currentMode.principalColor
+            color : textCustProps.color ? textCustProps.color :  currentMode.principalColor
         }
     })
     

@@ -1,16 +1,17 @@
+import { colors } from "../../utils/colors/colors.utils";
+
 export const theme = {
     lightMode: {
         principalBgColor : "#fff",
-        principalColor : "black",
         principalColor : "#000",
-        tabBarBgColor : "white" ,
+        tabBarBgColor : "#fff" ,
+        secondaryBgColor  : "#fff"
     } ,
     darkMode : {
-        //principalBgColor : "#1b1b1b" ,
         principalBgColor : "#000" ,
         principalColor : "#fff" ,
         tabBarBgColor : "#1b1b1b" ,
-        secondaryBgColor  : "black"
+        secondaryBgColor  : colors.dividerColor
     } 
 } 
 

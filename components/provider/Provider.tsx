@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { createContext } from 'react'
+import Portal from '../portal';
 
 interface ProviderProps  {
     theme ?: any,
@@ -12,9 +13,11 @@ const Provider = ({ theme , children} : ProviderProps) => {
   return (
     <View style={styles.container} >
       <ThemeContext.Provider value={theme ? theme : "light"}  >
+        <Portal.Host>
             {
                 children
             }
+        </Portal.Host>     
       </ThemeContext.Provider>
     </View>
   )

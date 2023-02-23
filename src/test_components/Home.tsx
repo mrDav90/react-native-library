@@ -1,12 +1,14 @@
-import { StyleSheet, /*Text*/ /*View*/ } from 'react-native'
+import { StyleSheet , Button /*Text*/ /*View*/ } from 'react-native'
 import React from 'react'
-import { View , Text, ScrollView} from '../../components'
+import { View , Text, ScrollView, Toast} from '../../components'
 
 const Home = () => {
   return (
     <ScrollView >
-      <View >
+      <View  >
         <Text >Home</Text>
+        <Button title="Test Toast" onPress={()=>{Toast.info({content : "Toast works successfully!" , duration : 3})}} />
+      
       </View>
     </ScrollView>  
   )

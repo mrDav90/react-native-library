@@ -35,6 +35,7 @@ import {Theme} from "../../components"
 interface ViewInterface extends ViewProps, TextProps {
   children?: React.ReactNode 
   style?: StyleProp<ViewStyle> | StyleProp<TextStyle>
+  relevant ?: boolean
 }
 function AntmView ( props : ViewInterface) {
  
@@ -70,7 +71,7 @@ function AntmView ( props : ViewInterface) {
       }
     }
 
-    return <View style={{backgroundColor:theme.principal_bg_color , flex : 1}} {...props} />
+    return <View style={{backgroundColor: theme.principal_bg_color , flex : 1}} {...props} />
   
 }
 

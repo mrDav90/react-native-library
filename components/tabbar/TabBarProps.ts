@@ -2,6 +2,7 @@ import React from "react"
 
 export interface TabBarProps {
     header ?: headerProps ,
+    headerShown ?: boolean  ,
     data ?: itemProps[]
 }
 
@@ -17,5 +18,5 @@ interface itemProps {
     focusedIconName ?: string | any ,
     tabBarLabel ?: string | any ,
     tabBarLabelPosition ?: string | any ,
-    tabBarLabelColor ?: string | any
+    tabBarLabelColor ?: string | any ,
 }

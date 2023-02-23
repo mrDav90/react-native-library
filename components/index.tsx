@@ -4,3 +4,5 @@ export {default as Text} from "./text/index";
 export {default as View} from "./view/index";
 export {default as ScrollView} from "./scroll-view/index";
 export {default as Theme} from "./theme/index";
+export {default as Portal} from "./portal/index";
+export {default as Toast} from "./toast/index";

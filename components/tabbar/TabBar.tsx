@@ -47,12 +47,12 @@ const TabBar = (tabBarProps : TabBarProps) => {
       return <Ionicons 
           name={ focused ? defaultIconName : focusedIconName}
           size={24}
-          color={focused ? "#0097e6" : theme.principal_color }
+          color={focused ? Theme.colors.primary_color : theme.principal_color }
       />
   }
 
   const customizeLabel = (focused : boolean , labelText : string) => {
-      return <Text style={{color : focused ? "#0097e6" : theme.principal_color}} > {labelText} </Text>
+      return <Text style={{color : focused ?  Theme.colors.primary_color : theme.principal_color}} > {labelText} </Text>
   }
   
   return (

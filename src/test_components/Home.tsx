@@ -1,14 +1,13 @@
-import { StyleSheet , Button /*Text*/ /*View*/ } from 'react-native'
+import { StyleSheet ,  /*Text*/ /*View*/ } from 'react-native'
 import React from 'react'
-import { View , Text, ScrollView, Toast} from '../../components'
+import { View , Text, ScrollView, Toast, Button} from '../../components'
 
 const Home = () => {
   return (
     <ScrollView >
       <View  >
         <Text >Home</Text>
-        <Button title="Test Toast" onPress={()=>{Toast.info({content : "Toast works successfully!" , duration : 3})}} />
-      
+        <Button  onPress={()=>{console.log("Top")}} style={styles.button} >Test button</Button>
       </View>
     </ScrollView>  
   )
@@ -16,4 +15,8 @@ const Home = () => {
 
 export default Home
 
-const styles = StyleSheet.create({})
+const styles : any = StyleSheet.create({
+  button : {
+    backgroundColor : "red" ,
+  }
+})

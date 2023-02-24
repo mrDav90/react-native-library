@@ -1,6 +1,6 @@
 export default {
     colors : {
-        primary_color : "#0097e6",
+        primary_color : "#007AFF",
         divider_color : "rgba(160, 170, 166, 0.16)"
     } ,
     lightMode : {

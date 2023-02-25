@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View , TouchableOpacity , TouchableOpacityProps, StyleProp, ViewStyle, TextStyle, ActivityIndicator } from 'react-native'
 import React, { useContext, useEffect } from 'react'
-import { COLORS, Theme } from '..'
+import { COLORS } from '..'
 import { ThemeContext } from '../provider/Provider'
 
 interface ButtonProps extends TouchableOpacityProps  {
@@ -18,14 +18,15 @@ interface ButtonStyles {
 }
 
 const Button = (buttonProps : ButtonProps) => {
-    const themeContext = useContext(ThemeContext)
-    const theme : any = themeContext === "light" && Theme.lightMode || themeContext === "dark" && Theme.darkMode;
-  
+  const {style , ...restProps} = buttonProps
+    const theme : any = useContext(ThemeContext);
     const styles  = StyleSheet.create<ButtonStyles>({
       container : {
         backgroundColor : buttonProps.type === "primary" && COLORS.primary_color as any || "transparent"   ,
         flex : 1 ,
         flexDirection : "row" ,
+        width : "100%",
+        display:"flex" ,
         justifyContent : "center",
         alignItems:"center" ,
         paddingVertical : 10 ,
@@ -38,15 +39,14 @@ const Button = (buttonProps : ButtonProps) => {
       text : {
         color : buttonProps.type === "primary" && "#fff" || buttonProps.type === "ghost" && COLORS.primary_color as any  ||  theme.principal_color ,
         fontSize: 17 ,
-        fontWeight : "500"
+        fontWeight : "500" ,
       }
     })
 
     
     return (
       <TouchableOpacity  
-        disabled={buttonProps.disabled}
-        onPress={buttonProps.onPress}
+        {...restProps}
       >
         <View style={ StyleSheet.compose(styles.container , buttonProps.style)} >
           {

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import {
   StyleProp,
+  StyleSheet ,
   Text,
   TextProps,
   TextStyle,
@@ -9,7 +10,6 @@ import {
   ViewStyle,
 } from 'react-native'
 import { ThemeContext } from '../provider/Provider'
-import {Theme} from "../../components"
 interface ViewInterface extends ViewProps, TextProps {
   children?: React.ReactNode 
   style?: StyleProp<ViewStyle> | StyleProp<TextStyle>
@@ -17,40 +17,36 @@ interface ViewInterface extends ViewProps, TextProps {
 }
 function AntmView ( props : ViewInterface) {
  
- 
-    const { children, ...restProps } = props
-    const themeContext = useContext(ThemeContext)
-    const theme : any = themeContext === "light" && Theme.lightMode || themeContext === "dark" && Theme.darkMode;
-    
+    const { style , ...restProps } = props
+    const theme : any = useContext(ThemeContext);
 
-    if (['number', 'string'].includes(typeof children)) {
-      return <Text {...restProps} children={children} />
-    }
+    // if (['number', 'string'].includes(typeof children)) {
+    //   return <Text {...restProps} children={children} />
+    // }
 
-    if (Array.isArray(children)) {
-      if (children.some(React.isValidElement)) {
-        return (
-          <View {...restProps}>
-            {React.Children.map(children, (child) => {
-              if (React.isValidElement(child)) {
-                return child
-              }
-              return <AntmView>{child}</AntmView>
-            })}
-          </View>
-        )
-      } else {
-        return (
-          <Text
-            {...restProps}
-            children={children.reduce((a, b) => (a || '') + '' + (b || ''))}
-          />
-        )
-      }
-    }
+    // if (Array.isArray(children)) {
+    //   if (children.some(React.isValidElement)) {
+    //     return (
+    //       <View {...restProps}>
+    //         {React.Children.map(children, (child) => {
+    //           if (React.isValidElement(child)) {
+    //             return child
+    //           }
+    //           return <AntmView>{child}</AntmView>
+    //         })}
+    //       </View>
+    //     )
+    //   } else {
+    //     return (
+    //       <Text
+    //         {...restProps}
+    //         children={children.reduce((a, b) => (a || '') + '' + (b || ''))}
+    //       />
+    //     )
+    //   }
+    // }
 
-    return <View style={{backgroundColor: theme.principal_bg_color , flex : 1}} {...props} />
-  
+    return <View style={StyleSheet.compose({flex:1} , props.style)} {...restProps} />
 }
 
 export default AntmView

@@ -5,7 +5,7 @@ import { ScrollView, View , Text, Switch } from '../../components'
 const Settings = () => {
   const [isChecked , setIsChecked] = useState(false);
   return (
-    <ScrollView >
+    <ScrollView style={{padding : 10}} >
         <View >
           <Text >Settings</Text>
           <Switch value={isChecked} onValueChange={()=>{setIsChecked(!isChecked)}} />

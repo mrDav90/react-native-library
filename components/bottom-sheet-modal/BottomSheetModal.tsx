@@ -1,9 +1,8 @@
-import {  StyleSheet , Modal , TouchableWithoutFeedback , Animated, TouchableOpacity } from 'react-native'
-import { COLORS, View } from '..';
+import {  StyleSheet  , Modal , TouchableWithoutFeedback , Animated, TouchableOpacity } from 'react-native'
+import { COLORS , View } from '..';
 import React, { useEffect, useRef , useMemo , useCallback, useContext } from 'react'
 import BottomSheet from '@gorhom/bottom-sheet';
 import { ThemeContext } from '../provider/Provider';
-import { Theme } from '..';
 
 export interface BottomSheetModalProps {
     isVisible ?: boolean , 
@@ -16,12 +15,12 @@ export interface BottomSheetModalProps {
 }
 
 const BottomSheetModal = (bottomSheetModalProps : BottomSheetModalProps) => {
-    const themeContext = useContext(ThemeContext)
-    const theme : any = themeContext === "light" && Theme.lightMode || themeContext === "dark" && Theme.darkMode;
+    const theme : any = useContext(ThemeContext);
+
     const animatedValue = useRef(new Animated.Value(0)).current
 
     const bottomSheetRef = useRef(null);
-    const snapPoints = useMemo(() => bottomSheetModalProps.points ? bottomSheetModalProps.points : ['50%','75%','90%'], []);
+    const snapPoints = useMemo(() => bottomSheetModalProps.points ? bottomSheetModalProps.points : ['50%','75%'], []);
   
     const handleSheetChanges = useCallback((index:any) => {
       if (index === -1) {

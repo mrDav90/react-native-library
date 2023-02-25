@@ -5,13 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { TabBarProps } from './TabBarProps';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeContext } from '../provider/Provider';
-import {COLORS, Theme} from "./../../components"
+import {COLORS} from "./../../components"
 
 const Tab = createBottomTabNavigator();
 const TabBar = (tabBarProps : TabBarProps) => {
-  const themeContext = useContext(ThemeContext);
-  const theme : any = themeContext === "light" && Theme.lightMode || themeContext === "dark" && Theme.darkMode;
- 
+  const theme : any = useContext(ThemeContext);
   const customizeIcon = (focused : boolean , defaultIconName : any , focusedIconName : any ) => {
       return <Ionicons 
           name={ focused ? defaultIconName : focusedIconName}
@@ -28,6 +26,9 @@ const TabBar = (tabBarProps : TabBarProps) => {
     <View style={styles.container} >
       <NavigationContainer>
         <Tab.Navigator
+          sceneContainerStyle={{
+            backgroundColor : theme.principal_bg_color
+          }}
           screenOptions={{
             headerTitleAlign : "left",
             headerShadowVisible : true ,

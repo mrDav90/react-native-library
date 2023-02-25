@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View , TouchableOpacity , TouchableOpacityProps, StyleProp, ViewStyle, TextStyle, ActivityIndicator } from 'react-native'
 import React, { useContext, useEffect } from 'react'
-import { Theme } from '..'
+import { COLORS, Theme } from '..'
 import { ThemeContext } from '../provider/Provider'
 
 interface ButtonProps extends TouchableOpacityProps  {
@@ -23,7 +23,7 @@ const Button = (buttonProps : ButtonProps) => {
   
     const styles  = StyleSheet.create<ButtonStyles>({
       container : {
-        backgroundColor : buttonProps.type === "primary" && Theme.colors.primary_color as any || "transparent"   ,
+        backgroundColor : buttonProps.type === "primary" && COLORS.primary_color as any || "transparent"   ,
         flex : 1 ,
         flexDirection : "row" ,
         justifyContent : "center",
@@ -33,10 +33,10 @@ const Button = (buttonProps : ButtonProps) => {
         borderRadius : 5 ,
         opacity : buttonProps.disabled ? 0.7 : 1 ,  
         borderWidth : 1 ,
-        borderColor : buttonProps.type === "primary" && Theme.colors.primary_color || buttonProps.type ===  "ghost" &&  Theme.colors.primary_color || Theme.colors.default_color
+        borderColor : buttonProps.type === "primary" && COLORS.primary_color || buttonProps.type ===  "ghost" &&  COLORS.primary_color || COLORS.default_color
       } ,
       text : {
-        color : buttonProps.type === "primary" && "#fff" || buttonProps.type === "ghost" && Theme.colors.primary_color as any  ||  theme.principal_color ,
+        color : buttonProps.type === "primary" && "#fff" || buttonProps.type === "ghost" && COLORS.primary_color as any  ||  theme.principal_color ,
         fontSize: 17 ,
         fontWeight : "500"
       }
@@ -54,7 +54,7 @@ const Button = (buttonProps : ButtonProps) => {
             <ActivityIndicator 
               color={
                   buttonProps.type === "primary" && "#fff" ||
-                  buttonProps.type === "ghost" && Theme.colors.primary_color as any ||
+                  buttonProps.type === "ghost" && COLORS.primary_color as any ||
                   null
               } 
             />

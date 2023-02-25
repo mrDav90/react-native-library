@@ -9,3 +9,4 @@ export {default as Toast} from "./toast/index";
 export {default as Button} from "./button/index";
 export {default as Switch} from "./switch/index";
 export {default as BottomSheetModal} from "./bottom-sheet-modal/index";
+export {COLORS} from "./colors/index"

@@ -1,5 +1,5 @@
 import {  StyleSheet , Modal , TouchableWithoutFeedback , Animated, TouchableOpacity } from 'react-native'
-import { View } from '..';
+import { COLORS, View } from '..';
 import React, { useEffect, useRef , useMemo , useCallback, useContext } from 'react'
 import BottomSheet from '@gorhom/bottom-sheet';
 import { ThemeContext } from '../provider/Provider';
@@ -98,7 +98,7 @@ const BottomSheetModal = (bottomSheetModalProps : BottomSheetModalProps) => {
                                 // shadowRadius : 5 ,
                                 // shadowOpacity : 0.5 ,
                                 borderWidth : 0.5 ,
-                                borderColor : Theme.colors.divider_color
+                                borderColor : COLORS.divider_color
                             }}
                             handleIndicatorStyle={{backgroundColor: theme.principal_color }}
                             

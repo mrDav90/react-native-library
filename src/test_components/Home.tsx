@@ -1,22 +1,31 @@
 import { StyleSheet ,  /*Text*/ /*View*/ } from 'react-native'
-import React from 'react'
-import { View , Text, ScrollView, Toast, Button} from '../../components'
+import React, { useState } from 'react'
+import { View , Text, ScrollView, Toast, Button , Switch, BottomSheetModal} from '../../components'
 
 const Home = () => {
-  return (
-    <ScrollView >
-      <View  >
-        <Text >Home</Text>
-        <Button  onPress={()=>{console.log("Top")}} style={styles.button} >Test button</Button>
-      </View>
-    </ScrollView>  
-  )
+   
+    const [isVisible , setIsVisible] = useState(false);
+    return (
+      <ScrollView >
+        <View>
+          <Text >Home</Text>
+          <Button onPress={()=>{Toast.success({content: "Toast works" , duration : 3})}} style={styles.button} >Test button</Button>
+          <Button type='primary' onPress={()=>{setIsVisible(true)}} > Open Bottom-sheet-modal </Button>
+          
+          <BottomSheetModal 
+            isVisible={isVisible}
+            setIsVisible={setIsVisible}
+            content={<Text>Bottom Sheet works</Text>}
+          />
+        </View>
+      </ScrollView>  
+    )
 }
 
 export default Home
 
 const styles : any = StyleSheet.create({
   button : {
-    backgroundColor : "red" ,
+    //width : 200
   }
 })

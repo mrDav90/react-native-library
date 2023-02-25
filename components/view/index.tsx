@@ -1,25 +1,3 @@
-// import { StyleProp, StyleSheet, TextProps, View, ViewProps, ViewStyle } from 'react-native'
-// import React, { useContext } from 'react'
-// import { ThemeContext } from '../provider/Provider'
-// import {Theme} from "../../components"
-
-// interface ViewInterface extends ViewProps  {
-//     children ?: React.ReactNode , 
-// }
-// const ViewCus = (viewProps : ViewInterface)  => {
-//     const themeContext = useContext(ThemeContext)
-//     const theme : any = themeContext === "light" && Theme.lightMode || themeContext === "dark" && Theme.darkMode;
-//     return (
-    
-//       <View style={{backgroundColor : theme.principal_bg_color}} > {viewProps.children} </View>
-      
-//     )
-// }
-
-// export default ViewCus
-
-// const styles = StyleSheet.create({})
-
 import React, { useContext } from 'react'
 import {
   StyleProp,

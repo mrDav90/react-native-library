@@ -10,5 +10,8 @@ export {default as Button} from "./button/index";
 export {default as Switch} from "./switch/index";
 export {default as BottomSheetModal} from "./bottom-sheet-modal/index";
 export {default as Input} from "./input/index";
+export {default as Accordion} from "./accordion/index";
+export {default as List} from "./list/index";
+export {default as WingBlank} from "./wing-blank/index";
 export {COLORS} from "./colors/index";
 

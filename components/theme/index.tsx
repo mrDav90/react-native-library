@@ -4,9 +4,10 @@ export default {
         principal_bg_color : "#fff",
         relevant_bg_color : "#fff" ,
         tab_bg_color : "#fff" ,
-        tab_color : "#84817a" ,
+        tab_color : "#000" ,
         modal_bg_color : "#fff",
-        input_border_color : "#ecf0f1",
+        input_border_color : "rgba(174, 174, 174, 0.58)",
+        list_border_color : "rgba(174, 174, 174, 0.58)",
     } ,
     darkMode : {
         principal_color: "#fff" ,
@@ -14,7 +15,8 @@ export default {
         relevant_bg_color : "#1a1a1a" ,
         tab_bg_color : "#0e0e0e" ,
         tab_color : "#ecf0f1" ,
-        modal_bg_color : "#0e0e0e",
-        input_border_color : "#ecf0f1",
+        modal_bg_color : "#1d1d1d",
+        input_border_color : "rgba(174, 174, 174, 0.58)",
+        list_border_color : "rgba(174, 174, 174, 0.58)",
     }
 }

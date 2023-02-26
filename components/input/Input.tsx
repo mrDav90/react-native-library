@@ -11,17 +11,18 @@ const Input = (inputProps : InputProps) => {
     const theme : any = useContext(ThemeContext);
     const [isHide , setIsHide] = useState(true);
     const [focusedColor , setFocusedColor] = useState(theme.input_border_color);
-    const [labelTop , setLabelTop] = useState(45);
-    const [labelSize , setLabelSize] = useState(15);
+    const [labelTop , setLabelTop] = useState(60);
+    const [labelSize , setLabelSize] = useState(16);
     const handleFocus =() => {
         setFocusedColor(COLORS.primary_color);
-        setLabelTop(37);
-        setLabelSize(17);
+        setLabelTop(40);
+        setLabelSize(14);
     }
+
     const handleBlur =() => {
         setFocusedColor(theme.input_border_color);
-        setLabelTop(45);
-        setLabelSize(15);
+        setLabelTop(60);
+        setLabelSize(16);       
     }
     const styles = StyleSheet.create({
         container : {
@@ -84,7 +85,7 @@ const Input = (inputProps : InputProps) => {
                             left : 0  ,
                         },
                         {
-                        transform: [{translateY: -50}, {translateX : 32}],
+                            transform: [{translateY: -50}, {translateX : 32}],
                         },
                     ]}
                 >
@@ -95,7 +96,7 @@ const Input = (inputProps : InputProps) => {
             }
             <View style={StyleSheet.compose(styles.container, inputProps.style as any)} >
                 { inputProps.prefixIconName &&
-                    <Ionicons style={{marginLeft : 10}} name={inputProps.prefixIconName as any} size={24} color={theme.principal_color} />
+                    <Ionicons style={{marginLeft : 10}} name={inputProps.prefixIconName as any} size={18} color={"#bdc3c7"} />
                 }
                 
                 <TextInput 
@@ -104,8 +105,9 @@ const Input = (inputProps : InputProps) => {
                     placeholder={inputProps.placeholder}
                     textAlign={inputProps.textAlign}
                     onChange={inputProps.onChange as any}
+                    onChangeText={inputProps.onChangeText as any} 
                     onFocus={ handleFocus || inputProps.onFocus as any}
-                    onBlur={handleBlur || inputProps.onBlur as any}
+                    onBlur={handleBlur || inputProps.onBlur as any }
                     secureTextEntry={inputProps.type==="password"&& isHide}
                     style={styles.input}
                 />

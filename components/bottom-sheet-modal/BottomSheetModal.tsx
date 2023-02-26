@@ -99,7 +99,7 @@ const BottomSheetModal = (bottomSheetModalProps : BottomSheetModalProps) => {
                                 borderWidth : 0.5 ,
                                 borderColor : COLORS.divider_color
                             }}
-                            handleIndicatorStyle={{backgroundColor: theme.principal_color }}
+                            handleIndicatorStyle={{backgroundColor: theme.principal_color , width : 60 }}
                             
                         >
                             <View style={styles.container}>

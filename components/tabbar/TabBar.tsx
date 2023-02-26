@@ -44,6 +44,7 @@ const TabBar = (tabBarProps : TabBarProps) => {
               backgroundColor : theme.tab_bg_color ,
               borderBottomWidth : 1 ,
               borderBottomColor : COLORS.divider_color ,
+              
             } ,
             tabBarShowLabel : true ,
             tabBarStyle : {

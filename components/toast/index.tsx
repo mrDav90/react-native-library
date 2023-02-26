@@ -12,6 +12,13 @@ const show = ( toastProps : ToastProps  ) => {
 }
 
 export default {
+    default : ( object : ToastProps ) => {
+        object.type="default"
+        let key = show(object)
+        setTimeout(() => {
+            Portal.remove(key)
+        },  (object.duration ? object.duration * 1000 : 2000) );
+    } ,
     info : ( object : ToastProps ) => {
         object.type="info"
         let key = show(object)

@@ -12,7 +12,7 @@ const TextCus = (textInterface : TextInterface) => {
     const theme : any = useContext(ThemeContext);
     return (
     
-      <Text style={StyleSheet.flatten([{color : theme.principal_color},textInterface.style])} {...restTextInterface}  >  {textInterface.children} </Text>
+      <Text style={StyleSheet.flatten([{color : theme.principal_color , fontSize : 17},textInterface.style])} {...restTextInterface}  >  {textInterface.children} </Text>
       
     )
 }

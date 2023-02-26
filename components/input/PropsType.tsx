@@ -33,7 +33,8 @@ export interface InputProps {
   locale?: object
   onChange?: (value: string) => void
   onFocus?: InputEventHandler
-  onBlur?: InputEventHandler
+  onBlur?: InputEventHandler ,
+  onChangeText ?: InputEventHandler,
   onVirtualKeyboardConfirm?: InputEventHandler
   children?: React.ReactNode ,
   style ?: StyleProp<ViewStyle> ,

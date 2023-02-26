@@ -8,6 +8,7 @@ interface ButtonProps extends TouchableOpacityProps  {
     type ?: "primary" | "default" | "ghost" ,
     loading ?: boolean ,
     style ?: StyleProp<TouchableOpacityProps> ,
+    textStyle ?: StyleProp<TextStyle>,
     disabled ?: boolean ,
     onPress ?: ()=>void
 }
@@ -18,7 +19,7 @@ interface ButtonStyles {
 }
 
 const Button = (buttonProps : ButtonProps) => {
-  const {style , ...restProps} = buttonProps
+  const {style , textStyle , ...restProps} = buttonProps
     const theme : any = useContext(ThemeContext);
     const styles  = StyleSheet.create<ButtonStyles>({
       container : {
@@ -61,7 +62,7 @@ const Button = (buttonProps : ButtonProps) => {
           }
           {
             typeof buttonProps.children === "string" ?
-            <Text style={StyleSheet.compose(styles.text , buttonProps.style)} > {buttonProps.children} </Text>
+            <Text style={StyleSheet.compose(styles.text , textStyle)} > {buttonProps.children} </Text>
             :
             buttonProps.children
           }

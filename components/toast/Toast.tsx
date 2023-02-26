@@ -21,7 +21,7 @@ const Toast = ({content , type} :  ToastProps)  => {
             maxWidth : "90%",
             zIndex : 9999,
             paddingHorizontal : 10 ,
-            paddingVertical : 7 ,
+            paddingVertical : 8 ,
             marginVertical : 0 ,
             borderRadius : 10 ,
             height : "auto" ,
@@ -37,18 +37,18 @@ const Toast = ({content , type} :  ToastProps)  => {
                 width : 2 ,
                 height : 2
             },
-           backgroundColor : "#fff"
+           backgroundColor : type === "default" ? "rgba(16, 16, 16, 0.81)" : "#fff" ,
         } ,
         content : {
-            color : "#000",
+            color : type === "default" ? "#fff" : "#000",
             fontSize : 15 ,
         } ,
         textContent : {
             width : "auto" ,
-            maxWidth : "90%",
+            maxWidth : type === "default" ? "100%" : "90%",
         } ,
         iconContent : {
-            width: "10%" ,
+            width: type==="default" ? "0%" : "10%" ,
             display : "flex",
             justifyContent:"center",
             alignItems:"center"

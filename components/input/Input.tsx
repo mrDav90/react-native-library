@@ -19,11 +19,22 @@ const Input = (inputProps : InputProps) => {
         setLabelSize(14);
     }
 
-    const handleBlur =() => {
+    const handleOnEndEditing = (e : any) => {
+        const inputValue =  e.nativeEvent.text  ;
         setFocusedColor(theme.input_border_color);
-        setLabelTop(60);
-        setLabelSize(16);       
+        if (inputValue !== "") {
+            setLabelTop(40);
+            setLabelSize(14);    
+        }
+        else{
+            setLabelTop(60);
+            setLabelSize(16);  
+        }
     }
+
+
+
+
     const styles = StyleSheet.create({
         container : {
             width :  "100%",
@@ -83,13 +94,15 @@ const Input = (inputProps : InputProps) => {
                             position : "absolute",
                             top : labelTop ,
                             left : 0  ,
+                            backgroundColor : theme.principal_bg_color , 
+                            zIndex : 1
                         },
                         {
                             transform: [{translateY: -50}, {translateX : 32}],
                         },
                     ]}
                 >
-                    <Text style= {{fontSize : labelSize}} >
+                    <Text style= {{fontSize : labelSize }} >
                         {inputProps.label}
                     </Text>
                 </View>
@@ -102,29 +115,34 @@ const Input = (inputProps : InputProps) => {
                 <TextInput 
                     value={inputProps.value}
                     defaultValue={inputProps.defaultValue}
-                    placeholder={inputProps.placeholder}
+                    placeholder={ inputProps.label ? null : inputProps.placeholder as any}
                     textAlign={inputProps.textAlign}
                     onChange={inputProps.onChange as any}
                     onChangeText={inputProps.onChangeText as any} 
                     onFocus={ handleFocus || inputProps.onFocus as any}
-                    onBlur={handleBlur || inputProps.onBlur as any }
+                    // onBlur={handleBlur || inputProps.onBlur as any }
                     secureTextEntry={inputProps.type==="password"&& isHide}
                     style={styles.input}
+                    onEndEditing={handleOnEndEditing}
+
                 />
-                <View style={styles.suffixIconContainer} >
-                    {
-                        inputProps.type === "password" && (
-                            isHide ? 
+
+                {
+                    inputProps.type === "password" && 
+                    ( 
+                        <View style={styles.suffixIconContainer} >
+                            {isHide ? 
                             <Pressable style={styles.suffixIcon} onPress={()=>setIsHide(!isHide)} >
                                 <Ionicons name='eye-off' size={24} color={theme.principal_color} />
                             </Pressable>                             
                             :
                             <Pressable style={styles.suffixIcon} onPress={()=>setIsHide(!isHide)}>
                                 <Ionicons name='eye' size={24} color={theme.principal_color} />
-                            </Pressable>   
-                        )            
-                    }
-                </View>
+                            </Pressable>  } 
+                        </View>
+                    )
+                }
+                
             </View>
         </View>  
     )

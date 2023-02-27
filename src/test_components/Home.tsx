@@ -14,7 +14,7 @@ const Home = () => {
           </WingBlank>
 
           <WingBlank>
-            <Input onChangeText={(value : any)=>{console.log(value)}} prefixIconName='mail-outline' label='Email' outline />
+            <Input placeholder='Email' /*onChangeText={(value : any)=>{console.log(value)}}*/ prefixIconName='mail-outline' label='Email'  />
             <Input prefixIconName='lock-closed-outline' label='Mot de passe' outline type='password' />    
           </WingBlank>
 

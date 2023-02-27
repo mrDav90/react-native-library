@@ -1,11 +1,7 @@
-import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native';
-import { AppProvider, TabBar } from './components';
-import Settings from './src/test_components/Settings';
-import Home from './src/test_components/Home';
+import { StyleSheet, View } from 'react-native';
+import { AppProvider } from './components';
+import TabBarComponent from './src/test_components/TabBarComponent';
 // import { Provider } from 'react-redux';
 // import { store } from './src/reducers/store';
 // import {useSelector} from "react-redux"
@@ -18,33 +14,7 @@ export default function App() {
     // </Provider>
     <AppProvider theme={"light"} >
       <View style={styles.container}>
-        
-        <TabBar 
-          header={{
-            title : "MyApp" ,
-            headerRight : <Text> <Ionicons name='search-outline' size={24} /> </Text>
-          }}
-          data={
-            [
-              {
-                name : "Home" ,
-                component : Home ,
-                defaultIconName : "home-outline" ,
-                focusedIconName : "home" ,
-                tabBarLabel : "Home" ,
-
-              } ,
-              {
-                name : "Settings" ,
-                component : Settings ,
-                defaultIconName : "settings-outline" ,
-                focusedIconName : "settings" ,
-                tabBarLabel : "Settings" ,
-
-              } ,
-            ]
-          }
-        />
+        <TabBarComponent />
         <StatusBar style="auto" />
       </View>
     </AppProvider>

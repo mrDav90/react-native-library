@@ -21,7 +21,7 @@ const ListItem = (listItemProps : ListItemProps) => {
             display : "flex",
             flex : 1 ,
             flexDirection : "row",
-            alignItems : "center"
+            alignItems : "center",
         }
     })
     return (

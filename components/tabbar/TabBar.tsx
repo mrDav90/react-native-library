@@ -24,7 +24,7 @@ const TabBar = (tabBarProps : TabBarProps) => {
   
   return (
     <View style={styles.container} >
-      <NavigationContainer>
+    
         <Tab.Navigator
           sceneContainerStyle={{
             backgroundColor : theme.principal_bg_color
@@ -87,7 +87,7 @@ const TabBar = (tabBarProps : TabBarProps) => {
               ))
             }
         </Tab.Navigator>
-      </NavigationContainer>
+      
     </View>
   )
 }

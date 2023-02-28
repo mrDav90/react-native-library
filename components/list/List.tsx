@@ -14,7 +14,10 @@ const List = (listProps : ListProps) => {
     const styles = StyleSheet.create({})
     return (
         <View>
-            <Text style={{fontSize : 20 , fontWeight : "600"}} > {listProps.title} </Text>
+            {
+                listProps.title &&
+                <Text style={{fontSize : 20 , fontWeight : "600"}} > {listProps.title} </Text>
+            }
             <View>
                 {listProps.children}
             </View>

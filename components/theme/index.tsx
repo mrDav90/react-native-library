@@ -8,6 +8,7 @@ export default {
         modal_bg_color : "#fff",
         input_border_color : "rgba(174, 174, 174, 0.58)",
         list_border_color : "rgba(174, 174, 174, 0.58)",
+        card_border_color : "rgba(174, 174, 174, 0.58)",
     } ,
     darkMode : {
         principal_color: "#fff" ,
@@ -18,5 +19,6 @@ export default {
         modal_bg_color : "#1d1d1d",
         input_border_color : "rgba(174, 174, 174, 0.58)",
         list_border_color : "rgba(174, 174, 174, 0.58)",
+        card_border_color : "rgba(174, 174, 174, 0.58)",
     }
 }

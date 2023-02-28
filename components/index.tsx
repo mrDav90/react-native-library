@@ -13,5 +13,7 @@ export {default as Input} from "./input/index";
 export {default as Accordion} from "./accordion/index";
 export {default as List} from "./list/index";
 export {default as WingBlank} from "./wing-blank/index";
+export {default as Card} from "./card/index";
+export {default as Chip} from "./chip/index";
 export {COLORS} from "./colors/index";
 

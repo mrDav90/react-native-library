@@ -1,6 +1,6 @@
 import { StyleSheet ,  /*Text*/ /*View*/ } from 'react-native'
 import React, { useState } from 'react'
-import { View , Text, ScrollView, Toast, Button , Switch, BottomSheetModal, Input, List, WingBlank} from '../../components'
+import { View , Text, ScrollView, Toast, Button , Switch, BottomSheetModal, Input, List, WingBlank, Card, Chip} from '../../components'
 
 const Home = () => {
    
@@ -32,6 +32,32 @@ const Home = () => {
                 <List.Item content="Text2" />   
             </List>  
           </WingBlank>
+
+          <WingBlank>
+            <Card header="Card Header" headerDivider footer="Card Footer" footerDivider bordered >
+              Here we have a card component with dark mode
+            </Card>
+          </WingBlank>
+
+          <WingBlank>
+            <Chip text="Chip"  type='info' />
+          </WingBlank>
+          
+          <WingBlank>
+            <Chip text="Chip" type='warning' size='sm' outline />
+          </WingBlank>
+
+          <WingBlank>
+            <Chip text="Chip" iconName="checkmark" type='success' outline />
+          </WingBlank>
+          <WingBlank>
+            <Chip text="Chip" type='error' outline size='lg' />
+          </WingBlank>
+          
+          <WingBlank>
+            <Chip text="Chip" />
+          </WingBlank>
+         
 
           <BottomSheetModal 
             isVisible={isVisible}

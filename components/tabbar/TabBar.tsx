@@ -33,7 +33,7 @@ const TabBar = (tabBarProps : TabBarProps) => {
             headerTitleAlign : "left",
             headerShadowVisible : true ,
             headerTintColor : "white" ,
-            headerShown : tabBarProps.headerShown || true ,
+            headerShown : tabBarProps.headerShown as boolean,
             headerTitle : ()=> {
               return <Text style={{color:theme.principal_color}} > {tabBarProps?.header?.title ? tabBarProps?.header?.title : "App" } </Text>
             } ,

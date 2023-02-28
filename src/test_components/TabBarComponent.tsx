@@ -13,6 +13,7 @@ const TabBarComponent = () => {
                 title : "MyApp" ,
                 headerRight : <Text> <Ionicons name='search-outline' size={24} /> </Text>
               }}
+              headerShown
               data={
                 [
                   {

@@ -2,14 +2,7 @@ import React, { useEffect, useState , useRef } from 'react';
 import { Animated , View  ,Text , StyleSheet } from 'react-native';
 import { ToastProps } from './interface';
 import { Ionicons } from '@expo/vector-icons';
-
-const toastColors = {
-    successColor : "#44bd32" ,
-    errorColor : "red",
-    questionColor : "#3498db" ,
-    warningColor : "#fbc531" ,
-    infoColor : "#3498db"
-}
+import { COLORS } from '../colors';
 
 const Toast = ({content , type} :  ToastProps)  => {
 
@@ -89,10 +82,10 @@ const Toast = ({content , type} :  ToastProps)  => {
                                 (type==="info" && "information-circle" as any) 
                             }
                             size={24}
-                            color={ type === "info" && toastColors.infoColor as any || 
-                                    type === "success" && toastColors.successColor as any || 
-                                    type === "error" && toastColors.errorColor as any || 
-                                    type === "warning" && toastColors.warningColor as any 
+                            color={ type === "info" && COLORS.info_color as any || 
+                                    type === "success" && COLORS.success_color as any || 
+                                    type === "error" && COLORS.error_color as any || 
+                                    type === "warning" && COLORS.warning_color as any 
                             }
                         />
                     </View>

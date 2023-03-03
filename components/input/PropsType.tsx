@@ -38,5 +38,5 @@ export interface InputProps {
   onVirtualKeyboardConfirm?: InputEventHandler
   children?: React.ReactNode ,
   style ?: StyleProp<ViewStyle> ,
-  prefixIconName ?: string
+  prefixIconName ?: string ,
 }

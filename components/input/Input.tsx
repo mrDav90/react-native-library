@@ -14,6 +14,7 @@ const Input = (inputProps : InputProps) => {
     const [labelTop , setLabelTop] = useState(60);
     const [labelSize , setLabelSize] = useState(16);
     const [labelZIndex  , setLabelZIndex] = useState(-1);
+    
     const handleFocus =() => {
         setFocusedColor(COLORS.primary_color);
         setLabelTop(40);

@@ -13,10 +13,12 @@ const Input = (inputProps : InputProps) => {
     const [focusedColor , setFocusedColor] = useState(theme.input_border_color);
     const [labelTop , setLabelTop] = useState(60);
     const [labelSize , setLabelSize] = useState(16);
+    const [labelZIndex  , setLabelZIndex] = useState(-1);
     const handleFocus =() => {
         setFocusedColor(COLORS.primary_color);
         setLabelTop(40);
         setLabelSize(14);
+        setLabelZIndex(1);
     }
 
     const handleOnEndEditing = (e : any) => {
@@ -24,11 +26,13 @@ const Input = (inputProps : InputProps) => {
         setFocusedColor(theme.input_border_color);
         if (inputValue !== "") {
             setLabelTop(40);
-            setLabelSize(14);    
+            setLabelSize(14);
+            setLabelZIndex(1);    
         }
         else{
             setLabelTop(60);
-            setLabelSize(16);  
+            setLabelSize(16); 
+            setLabelZIndex(-1); 
         }
     }
 
@@ -95,7 +99,7 @@ const Input = (inputProps : InputProps) => {
                             top : labelTop ,
                             left : 0  ,
                             backgroundColor : theme.principal_bg_color , 
-                            zIndex : 1
+                            zIndex : labelZIndex
                         },
                         {
                             transform: [{translateY: -50}, {translateX : 32}],

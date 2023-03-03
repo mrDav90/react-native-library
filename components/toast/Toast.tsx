@@ -30,10 +30,14 @@ const Toast = ({content , type} :  ToastProps)  => {
                 width : 2 ,
                 height : 2
             },
-           backgroundColor : type === "default" ? "rgba(16, 16, 16, 0.81)" : "#fff" ,
+           backgroundColor :    type === "info" && COLORS.info_color as any || 
+                                type === "success" && COLORS.success_color as any || 
+                                type === "error" && COLORS.error_color as any || 
+                                type === "warning" && COLORS.warning_color as any || 
+                                type === "default" && "rgba(16, 16, 16, 0.81)" ,
         } ,
         content : {
-            color : type === "default" ? "#fff" : "#000",
+            color : "#fff",
             fontSize : 15 ,
         } ,
         textContent : {
@@ -82,11 +86,7 @@ const Toast = ({content , type} :  ToastProps)  => {
                                 (type==="info" && "information-circle" as any) 
                             }
                             size={24}
-                            color={ type === "info" && COLORS.info_color as any || 
-                                    type === "success" && COLORS.success_color as any || 
-                                    type === "error" && COLORS.error_color as any || 
-                                    type === "warning" && COLORS.warning_color as any 
-                            }
+                            color={"#fff"}
                         />
                     </View>
                     <View style={styles.textContent} >

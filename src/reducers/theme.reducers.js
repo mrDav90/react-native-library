@@ -12,6 +12,12 @@ export const themeSlice = createSlice({
         } ,
         setChecked : (state , action) => {
             state.isChecked = action.payload
+            if (state.isChecked === true) {
+                state.theme = "dark";
+            }
+            else {
+                state.theme = "light";
+            }
         }
     }
 })

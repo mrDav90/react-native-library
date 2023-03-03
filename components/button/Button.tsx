@@ -5,7 +5,7 @@ import { ThemeContext } from '../provider/Provider'
 
 interface ButtonProps extends TouchableOpacityProps  {
     //content ?: React.ReactNode | string
-    type ?: "primary" | "default" | "outline" ,
+    type ?: "primary" | "default" | "outline"
     loading ?: boolean ,
     style ?: StyleProp<TouchableOpacityProps> ,
     textStyle ?: StyleProp<TextStyle>,

@@ -10,6 +10,7 @@ export default {
         input_border_color : "rgba(174, 174, 174, 0.58)",
         list_border_color : "rgba(174, 174, 174, 0.58)",
         card_border_color : "rgba(174, 174, 174, 0.58)",
+        divider_color : "rgba(174, 174, 174, 0.58)",
     } ,
     darkMode : {
         principal_color: "#fff" ,
@@ -22,5 +23,6 @@ export default {
         input_border_color : "rgba(174, 174, 174, 0.58)",
         list_border_color : "rgba(174, 174, 174, 0.58)",
         card_border_color : "rgba(174, 174, 174, 0.58)",
+        divider_color : "rgba(174, 174, 174, 0.58)",
     }
 }

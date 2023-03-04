@@ -16,5 +16,7 @@ export {default as WingBlank} from "./wing-blank/index";
 export {default as Card} from "./card/index";
 export {default as Chip} from "./chip/index";
 export {default as Navigation} from "./navigation/index";
+export {default as SectionList} from "./section-list/index";
+export {default as Divider} from "./divider/index";
 export {COLORS} from "./colors/index";
 

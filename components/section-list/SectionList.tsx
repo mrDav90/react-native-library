@@ -1,4 +1,5 @@
-import { Pressable, PressableProps, StyleSheet, Text, View , ViewProps } from 'react-native'
+import { Pressable, PressableProps, StyleSheet, ViewProps } from 'react-native'
+import { Text ,  View } from '..'
 import { Ionicons } from '@expo/vector-icons'
 import React, { useContext, useEffect } from 'react'
 import { COLORS } from '../colors'
@@ -7,7 +8,8 @@ import Divider from '../divider'
 
 export interface SectionListProps {
     title ?: string
-    data : SectionListItemProps[]
+    data : SectionListItemProps[] ,
+    bordered ?: boolean
 }
 
 interface SectionListItemProps extends PressableProps {
@@ -16,14 +18,17 @@ interface SectionListItemProps extends PressableProps {
     hideDivider ?: boolean 
 }
 
-const SectionList = (props: SectionListProps , sectionProps : SectionListItemProps) => {
+const SectionList = (props: SectionListProps) => {
     const theme : any = useContext(ThemeContext);
     props.data[props.data.length-1].hideDivider = true;
     const styles = StyleSheet.create({
         container : {
             flex : 1 ,
             width : "100%" , 
-            padding : 5
+            padding : 0 ,
+            borderWidth  : props.bordered  ? 1  : 0 ,
+            borderColor : COLORS.divider_color , 
+            borderRadius : 10
         } ,
         text : {
             fontSize : 16
@@ -47,26 +52,32 @@ const SectionList = (props: SectionListProps , sectionProps : SectionListItemPro
     // },[])
     
     return (
-        <View style={styles.container}>
-        {
-            props.data.map((item , id)=>(
-                <Pressable  key={id} {...sectionProps} >
-                   <View style={styles.itemContent} >
-                        <View style={{display:"flex",flexDirection:"row"}}>
-                            {
-                                item.icon && <Ionicons name={item.icon as any} size={18} style={{marginRight : 5}} />
-                            }
-                            <Text style={styles.text} > {item.name} </Text>
+        <View style={{marginVertical : 10}}>
+            {
+                props.title && <Text style={{fontWeight : "bold" , marginBottom : 10 , marginLeft : -5}} > {props.title} </Text>
+            }
+            
+            <View style={styles.container}>
+            {
+                props.data.map((item , id)=>(
+                    <Pressable  key={id} {...item}  >
+                        <View style={styles.itemContent} >
+                                <View style={{display:"flex",flexDirection:"row"}}>
+                                    {
+                                        item.icon && <Ionicons name={item.icon as any} color={theme.principal_color} size={18} style={{marginRight : 2}} />
+                                    }
+                                    <Text style={styles.text} > {item.name} </Text>
+                                </View>
+                                
+                                <Ionicons name={'chevron-forward-outline' as any} color={theme.divider_color} size={18} />
                         </View>
-                        
-                        <Ionicons name={'chevron-forward-outline' as any} color={theme.divider_color} size={18} />
-                   </View>
-                  {
-                    !item.hideDivider  &&  <Divider/>
-                  }
-                </Pressable>
-            ))
-        }
+                        {
+                            !item.hideDivider  &&  <Divider/>
+                        }
+                    </Pressable>
+                ))
+            }
+            </View>
         </View>
     )
 }

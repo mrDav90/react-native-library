@@ -1,6 +1,6 @@
 import { StyleSheet ,  /*Text*/ /*View*/ } from 'react-native'
 import React, { useState } from 'react'
-import { View , Text, ScrollView, Toast, Button , Switch, BottomSheetModal, Input, List, WingBlank, Card, Chip} from '../../components'
+import { View , Text, ScrollView, Toast, Button , Switch, BottomSheetModal, Input, List, WingBlank, Card, Chip , SectionList} from '../../components'
 
 const Home = ({navigation} : any) => {
    
@@ -10,18 +10,38 @@ const Home = ({navigation} : any) => {
         <View >
 
           <WingBlank>
-            <Text>Home</Text>
-          </WingBlank>
-
-          <WingBlank>
-            <List title="Composants" bordered > 
-                <List.Item content="Buttons" onPress={()=>{navigation.navigate("Buttons")}} />   
-                <List.Item content="Inputs" onPress={()=>{navigation.navigate("Inputs")}} />   
-                <List.Item content="Chips" onPress={()=>{navigation.navigate("Chips")}} />   
-                <List.Item content="BottomSheets" onPress={()=>{navigation.navigate("BottomSheets")}} />   
-                <List.Item content="Cards" onPress={()=>{navigation.navigate("Cards")}} />   
-                <List.Item content="Toasts" onPress={()=>{navigation.navigate("Toasts")}} />   
-            </List>  
+            <SectionList 
+                title='Home'
+                data={
+                    [
+                        {
+                            name  : "Boutons" ,
+                            onPress : ()=>{navigation.navigate("Buttons")}
+                        } ,
+                        {
+                            name  : "Inputs" ,
+                            onPress : ()=>{navigation.navigate("Inputs")}
+                        } ,
+                        {
+                            name  : "Chips" ,
+                            onPress : ()=>{navigation.navigate("Chips")}
+                        } ,
+                        {
+                          name  : "BottomSheets" ,
+                          onPress : ()=>{navigation.navigate("BottomSheets")}
+                        } ,
+                        {
+                          name  : "Cards" ,
+                          onPress : ()=>{navigation.navigate("Cards")}
+                        } ,
+                        {
+                          name  : "Toasts" ,
+                          onPress : ()=>{navigation.navigate("Toasts")}
+                        } ,
+                    ]
+                }
+                bordered
+            />
           </WingBlank>
 
         </View>
